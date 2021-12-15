@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
 import {
   CButton,
   CCard,
@@ -6,39 +8,26 @@ import {
   CCardFooter,
   CCol,
   CContainer,
-  CForm,
-  CInput,
-  CInputGroup,
-  CInputGroupPrepend,
-  CInputGroupText,
   CRow,
 } from "@coreui/react";
-import CIcon from "@coreui/icons-react";
-import http from '../../../utils/httpService'
-import axios from "axios";
+import http from "../../../utils/httpService";
+import FormInput from "src/reusable/formInput";
+import Button from "src/reusable/common/Button";
 
-const { REACT_APP_BACKEND_URL } = process.env;
+const SignupSchema = Yup.object().shape({
+  firstname: Yup.string().required("Fistname is required"),
+  lastname: Yup.string().required("Lastname is required"),
+  username: Yup.string().required("Username is required"),
+  email: Yup.string().email().required("Email is required"),
+  password: Yup.string().required("Password is required")
+});
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const signup = async () => {
+  const signup = async (credentials) => {
     try {
-      console.log(username, password, email);
-      
-      const { data } = await http.publicFetch.post(
-      'owner/signup', {
-        username,
-        email,
-        password,
-        lastname,
-        firstname
-      }
+      const { data } = await http.publicFetch.post("owner/signup",
+        credentials
       );
-      // console.log(data);
     } catch (error) {
       console.error(error.response.data.message);
     }
@@ -59,82 +48,54 @@ const Register = () => {
                 <CButton style={{ background: "purple", color: "white" }}>
                   Login
                 </CButton>
-                <CForm>
-                  <h1>Register</h1>
-                  <p className="text-muted">Create your account</p>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupPrepend>
-                      <CInputGroupText>
-                        <CIcon name="cil-user" />
-                      </CInputGroupText>
-                    </CInputGroupPrepend>
-                    <CInput
+                <Formik
+                  initialValues={{
+                    firstname: "",
+                    lastname: "",
+                    email: "",
+                    username: "",
+                    password: "",
+                  }}
+                  onSubmit={(values) => signup(values)}
+                  validationSchema={SignupSchema}
+                >
+                  <Form>
+                    <h1>Register</h1>
+                    <p className="text-muted">Create your account</p>
+                    <FormInput
+                      name="firstname"
                       type="text"
                       placeholder="Firstname"
                       autoComplete="firstname"
-                      value={firstname}
-                      onChange={(e) => setFirstname(e.target.value)}
                     />
-                  </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupPrepend>
-                      <CInputGroupText>
-                        <CIcon name="cil-user" />
-                      </CInputGroupText>
-                    </CInputGroupPrepend>
-                    <CInput
+                    <FormInput
+                      name="lastname"
                       type="text"
-                      placeholder="LastName"
-                      autoComplete="lastname "
-                      value={lastname}
-                      onChange={(e) => setLastname(e.target.value)}
+                      placeholder="Lastname"
+                      autoComplete="lastname"
                     />
-                  </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupPrepend>
-                      <CInputGroupText>
-                        <CIcon name="cil-user" />
-                      </CInputGroupText>
-                    </CInputGroupPrepend>
-                    <CInput
+                    <FormInput
+                      name="username"
                       type="text"
                       placeholder="Username"
                       autoComplete="username"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
                     />
-                  </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupPrepend>
-                      <CInputGroupText>@</CInputGroupText>
-                    </CInputGroupPrepend>
-                    <CInput
+                    <FormInput
+                      name="email"
                       type="text"
                       placeholder="Email"
                       autoComplete="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
                     />
-                  </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupPrepend>
-                      <CInputGroupText>
-                        <CIcon name="cil-lock-locked" />
-                      </CInputGroupText>
-                    </CInputGroupPrepend>
-                    <CInput
+                    <FormInput
+                      name="password"
                       type="password"
                       placeholder="Password"
-                      autoComplete="new-password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      autoComplete="password"
                     />
-                  </CInputGroup>
 
-                  <CButton color="yahoo" onClick={() => signup()} block>
-                    Create Account
-                  </CButton>
-                </CForm>
+                    <Button type="submit" color="yahoo" text="Create Account" />
+                  </Form>
+                </Formik>
               </CCardBody>
               <CCardFooter className="p-4">
                 <CRow>
