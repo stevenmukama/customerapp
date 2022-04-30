@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -5,6 +6,7 @@ import { toast } from 'react-toastify'
 import { register, reset } from '../../../features/auth/authSlice'
 import Spinner from '../../../components/Spinner'
 // import { Link } from 'react-router-dom'
+import './../../pages/register/register.css'
 
 import {
   CButton,
@@ -46,8 +48,12 @@ function Register() {
       toast.error(message)
     }
 
-    if (isSuccess || user) {
+    if (isSuccess) {
       navigate('/')
+    }
+
+    if (user) {
+      navigate('/dashboard')
     }
 
     dispatch(reset())
@@ -124,9 +130,9 @@ function Register() {
               </CCol>
             </CRow>
             <CForm onSubmit={onSubmit}>
-              <h4 className="fw-bold text">start free</h4>
-              <p className="fs-2 fw-bold text">CREATE AN ACCOUNT</p>
-              <p className=" font-poppins fst-normal text">Username</p>
+              <h4 className="fw-bold text registercontent">start free</h4>
+              <p className="fs-2 fw-bold text registercontent">CREATE AN ACCOUNT</p>
+              <p className=" font-poppins fst-normal text registercontent">Username</p>
               <CInputGroup className="mb-3">
                 <CFormInput
                   type="text"
@@ -160,7 +166,7 @@ function Register() {
                   onChange={onChange}
                 />
               </CInputGroup>
-              <p className=" font-poppins fst-normal text">Email</p>
+              <p className=" font-poppins fst-normal text registercontent">Email</p>
 
               <CInputGroup className="mb-3">
                 <CFormInput
@@ -173,7 +179,7 @@ function Register() {
                   onChange={onChange}
                 />
               </CInputGroup>
-              <p className=" font-poppins fst-normal text">Password</p>
+              <p className=" font-poppins fst-normal text registercontent">Password</p>
 
               <CInputGroup className="mb-3">
                 <CFormInput
@@ -186,7 +192,7 @@ function Register() {
                   onChange={onChange}
                 />
               </CInputGroup>
-              <p className=" font-poppins fst-normal text">Confirm password</p>
+              <p className=" font-poppins fst-normal text registercontent">Confirm password</p>
 
               <CInputGroup className="mb-3">
                 <CFormInput
@@ -200,7 +206,12 @@ function Register() {
                 />
               </CInputGroup>
 
-              <CButton type="submit" size="sm" variant="outline" className="col-12 mx-auto ">
+              <CButton
+                type="submit"
+                size="sm"
+                variant="outline"
+                className="col-12 mx-auto continuebuttton "
+              >
                 CONTINUE
               </CButton>
               <p className=" text-medium-emphasis mt-4 text-center ">
