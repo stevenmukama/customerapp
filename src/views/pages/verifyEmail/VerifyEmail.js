@@ -14,7 +14,7 @@ function VerifyEmail() {
   useEffect(() => {
     dispatch(verifyEmail(token))
   }, [dispatch, token])
-  return <div>VerifyEmail</div>
+  return <div> email is verfied</div>
 }
 
 export default VerifyEmail

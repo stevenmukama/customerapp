@@ -1,7 +1,415 @@
-.registercontent {
+/* .registercontent {
   color: #8902a6;
-}
+} */
 
 /* .continuebuttton {
   background-color: #8902a6;
 } */
+ 
+.Register {
+  height: 100vh;
+  display: flex;
+  /* justify-content: space-between; */
+  margin: 2rem;
+  flex-direction: row;
+  column-gap: 2rem;
+}
+
+.register-business {
+  width: 50%;
+  background-color: #8902a6;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* .image-container{
+  border
+} */
+
+.fimboo__image {
+  margin-top: 2rem;
+  border: 1px solid;
+  padding: 4.1875rem; 
+  background: #ffff;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.722) 102.99%
+  );
+  border-radius: 12px;
+}
+.business-finance {
+  /* margin-top: 1rem; */
+  font-size: 3rem;
+  /* height: 202px;
+width: 459px; */
+  /* font-family: Poppins; */
+  font-weight: 600;
+  /* line-height: 60px; */
+  text-align: center;
+  color: #ffffff;
+}
+.privacy-terms {
+  font-size: 1rem;
+  color: #ffffff;
+}
+.formforLogin {
+  width: 50%;
+}
+/* .formregister {
+  padding-top: 2rem;
+} */
+.formInput {
+  display: flex;
+  flex-direction: column;
+}
+#privacy {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.loginlink {
+  text-decoration: none;
+  color: #ffff;
+  text-align: center;
+  font-size: 1rem;
+  border: 2px solid #8902a6;
+  background-color: #8902a6;
+  margin-left: 85.4%;
+  margin-bottom: 1rem;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.loginlink:hover {
+  color: #ffff;
+}
+
+input {
+  padding: 10px;
+  margin: 9px 0px;
+  border-radius: 5px;
+  border: 1px solid rgba(224, 221, 221, 1);
+}
+.start-free,
+.create-account {
+  color: #8902a6;
+}
+.start-free {
+  /* width: 93px; */
+  /* height: 30px; */
+  /* font-family: 'Poppins'; */
+  font-weight: bolder;
+  font-size: 1.25rem;
+  line-height: 30px;
+}
+.create-account {
+  /* width: 260px; */
+  /* height: 36px; */
+
+  /* font-family: 'Poppins'; */
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+label {
+  /* font-size: 12px; */
+  color: #8902a6;
+  font-size: 0.8rem;
+}
+
+.errormessage {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+input:invalid[focused='true'] {
+  border: 1px solid red;
+}
+
+input:invalid[focused='true'] ~ span {
+  display: block;
+}
+.submit__button {
+  width: 100%;
+  color: #ffffff;
+  height: 2rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #8902a6;
+  outline: none;
+  margin-bottom: 1rem;
+}
+.socialmedia {
+  margin-top: 1rem;
+}
+
+/* <form>
+          <div className="flex-container1">
+            <span className="businessform">business name</span>
+            <input
+              type="text"
+              placeholder="business name"
+              className="inputbusiness"
+              id="name"
+              name="businessname"
+              value={businessname}
+              onChange={onChange}
+              onBlur={handleFocus}
+              onFocus={() => setFocused(true)}
+              focused={focused.toString()}
+              required
+            />
+          </div>
+          <div className="flex-container2">
+            <div className="formcategory">
+              <span className="categoryselect">select category</span>
+              <select
+                className="inputselect"
+                id="categoryselect"
+                name="categoryselect"
+                value={categoryselect}
+                onChange={onChange}
+                onBlur={handleFocus}
+                onFocus={() => setFocused(true)}
+                focused={focused.toString()}
+                required
+              >
+                <option value="1">business</option>
+                <option value="2">business owner</option>
+              </select>
+            </div>
+            <div className="companylogo">
+              <span className="logoform">company logo</span>
+              <input
+                type="file"
+                accept="image/*"
+                alt="companylogo"
+                placeholder="no file selected"
+                className="inputlogo"
+                id="companylogo"
+                name="companylogo"
+                value={companylogo}
+                onChange={onChange}
+                onBlur={handleFocus}
+                onFocus={() => setFocused(true)}
+                focused={focused.toString()}
+                required
+              />
+            </div>
+          </div>
+          <div className="flex-container3">
+            <div className="countryitem">
+              <span className="countryform">
+                country
+                <input
+                  type="text"
+                  placeholder="country"
+                  className="inputcountry"
+                  id="countryitem"
+                  name="countryitem"
+                  value={countryitem}
+                  onChange={onChange}
+                  onBlur={handleFocus}
+                  onFocus={() => setFocused(true)}
+                  focused={focused.toString()}
+                  required
+                />
+              </span>
+            </div>
+            <div className="provinceitem">
+              <span className="provinceform">
+                province
+                <input
+                  type="text"
+                  placeholder="province"
+                  className="inputprovince"
+                  id="provinceitem"
+                  name="provinceitem"
+                  value={provinceitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div>
+          </div> */
+/* <div className="flex-container4">
+            <div className="districtitem">
+              <span className="districtform">
+                district
+                <input
+                  type="text"
+                  placeholder="district"
+                  className="inputdistrict"
+                  id="districtitem"
+                  name="districtitem"
+                  value={districtitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div> */
+/* <div className="cellitem">
+              <span className="cellform">
+                cell
+                <input
+                  type="text"
+                  placeholder="cell"
+                  className="inputcell"
+                  id="cellitem"
+                  name="cellitem"
+                  value={cellitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div> */
+/* </div>
+          <div className="flex-container5">
+            <div className="villageitem">
+              <span className="villageform">
+                village
+                <input
+                  type="text"
+                  placeholder="village"
+                  className="inputvillage"
+                  id="villageitem"
+                  name="villageitem"
+                  value={villageitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div> */
+/* <div className="streetitem">
+              <span className="streetform">
+                street number
+                <input
+                  type="text"
+                  placeholder="street number"
+                  className="inputstreet"
+                  id="streetitem"
+                  name="streetitem"
+                  value={streetitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div>
+          </div>
+
+          <div className="flex-container6">
+            <div className="phoneitem">
+              <span className="phoneform">
+                business phone number
+                <input
+                  type="number"
+                  placeholder="name"
+                  className="inputphonenumber"
+                  id="phoneitem"
+                  name="phoneitem"
+                  value={phoneitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div> */
+/* <div className="currencyitem">
+              <span className="currencyform">
+                currency
+                <input
+                  type="text"
+                  placeholder="name"
+                  className="inputcurrency"
+                  id="currencyitem"
+                  name="currencyitem"
+                  value={currencyitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div>
+          </div> */
+/* <div className="flex-container7">
+            <div className="tinitem">
+              <span className="tinform">
+                TIN number
+                <input
+                  type="number"
+                  placeholder="Tin"
+                  className="inputtinnumber"
+                  id="tinitem"
+                  name="tinitem"
+                  value={tinitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div>
+            <div className="websiteitem">
+              <span className="websiteform">
+                website
+                <input
+                  type="text"
+                  placeholder="website"
+                  className="inputwebsite"
+                  id="websiteitem"
+                  name="websiteitem"
+                  value={websiteitem}
+                  onChange={onChange}
+                  required
+                />
+              </span>
+            </div>
+          </div> */
+/* <div className="flex-container8">
+            <span className="workspace">workspace</span> */
+/*  workspace */
+/* <div className="workspacecheck">
+              <div className="radioform">
+                <input
+                  type="radio"
+                  className="checkowned"
+                  id="checkowned"
+                  name="checkowned"
+                  value={checkowned}
+                  onChange={onChange}
+                />
+                <span className="radiowned">owned</span>
+              </div>
+              <div className="radioform">
+                <input
+                  type="radio"
+                  className="checkrental"
+                  id="checkrental"
+                  name="checkrental"
+                  value={checkrental}
+                  onChange={onChange}
+                />
+                <span className="radiorental">rental</span>
+              </div>
+            </div>
+          </div> */
+/* <div className="flex-container9">
+            <p className="aboutbusiness">about business</p>
+            <textarea
+              className="inputaboutbusiness"
+              id="aboutbusiness"
+              name="aboutbusiness"
+              value={aboutbusiness}
+              onChange={onChange}
+            />
+          </div>
+          <div className="flex-container10">
+            <button className="clearbuton" type="reset">
+              {' '}
+              <span className="textbutton">CLEAR</span>
+            </button>
+            <button className="continuebuton" type="submit">
+              {' '}
+              <span className="textbutton">CONTINUE</span>
+            </button>
+          </div>
+        </form> */

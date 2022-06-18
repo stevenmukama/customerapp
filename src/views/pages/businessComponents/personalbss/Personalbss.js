@@ -1,15 +1,14 @@
 /* eslint-disable prettier/prettier */
 
 import React from 'react'
-import './../../pages/personalbss/personalbss.css'
+import './personalbss.css'
 // import { link } from 'react-router-dom'
 
 function personalbss() {
   return (
     <div className="personalbss">
-      <img className="fimbooimage" src="./fimboo.png" alt="fimboo" />
       {/* table header for personalbss */}
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>
@@ -36,11 +35,11 @@ function personalbss() {
             </th>
           </tr>
         </thead>
-      </table>
-      <p className="business__info">Business Information </p>
+      </table> */}
+      <p className="business__info">Business Information Personalbss </p>
       {/* form */}
-      <div className="form__container">
-        <form>
+      {/* <div className="form__container"> */}
+        {/* <form> */}
           <div className="flex-container1">
             <span className="businessform">business name</span>
             <input type="text" placeholder="business name" className="inputbusiness" />
@@ -125,7 +124,7 @@ function personalbss() {
             <div className="tinitem">
               <span className="tinform">
                 TIN number
-                <input type="text" placeholder="Tin" className="inputtinnumber" />
+                <input type="text" placeholder="Tin" className="inputtinnumber" />{' '}
               </span>
             </div>
             <div className="websiteitem">
@@ -153,7 +152,7 @@ function personalbss() {
             <p className="aboutbusiness">about business</p>
             <input type="text" className="inputaboutbusiness" />
           </div>
-          <div className="flex-container10">
+          {/* <div className="flex-container10">
             <button className="clearbuton">
               {' '}
               <span className="textbutton">CLEAR</span>
@@ -162,9 +161,9 @@ function personalbss() {
               {' '}
               <span className="textbutton">CONTINUE</span>
             </button>
-          </div>
-        </form>
-      </div>
+          </div> */}
+        {/* </form> */}
+      {/* </div> */}
     </div>
   )
 }

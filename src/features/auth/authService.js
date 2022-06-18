@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import axios from 'axios'
 
-const API_URL = process.env.API_URL
+const API_URL = process.env.REACT_APP_API_URL
 
 // http://localhost:4000/api/v1'
 
@@ -34,7 +34,7 @@ const logout = () => {
 
 // email verification
 const verifyEmail = async (token) => {
-  const response = await axios.post(API_URL + `/owner/confirmation/${token}`)
+  const response = await axios.get(API_URL + `/owner/confirmation/${token}`)
   console.log(response)
 
   return response

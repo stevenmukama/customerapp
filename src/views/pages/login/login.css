@@ -1,21 +1,121 @@
-.register {
-  margin-left: 27rem;
-  /* margin-bottom: 7rem; */
-  margin-top: 0.5rem;
-  /* background-color: black; */
-  font-weight: 500;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.registerlink {
-  text-decoration: none;
-  /* margin-left: 2rem; */
-  text-align: center;
-  font-size: 1rem;
+.login-form {
+  height: 90vh;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+/* .login-business {
+  width: 50%;
+} */
+
+/* form {
+  display: none;
+} */
+/* .card,
+.login-business {
+  margin: 2.5rem;
+} */
+
+.login-business {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* flex: 1 30px 50px; */
+}
+.loginimage {
+  height: 3rem;
+  /* margin-top: 1.5rem; */
+  /* margin-bottom: 5rem; */
+  width: 11.875rem;
+}
+.business-income {
+  font-family: Poppins;
+}
+.business-income {
+  font-size: 36px;
+  color: #575457;
+}
+
+/* margin-bottom: 3rem; */
+.privacy-terms {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-weight: lighter;
+  margin-top: 1rem;
+}
+span {
+  text-decoration: underline;
+  font-family: 'Poppins', sans-serif;
 }
 
 .card {
   /* border-radius: 1rem; */
-  padding-top: 1rem;
-  padding-left: 2rem;
+  padding: 2rem 6rem 6rem 6rem;
+  /* padding-top: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-bottom: 6rem; */
   background-color: #8902a6;
   /* width: 18rem; */
+  width: 60%;
+}
+
+.register__link {
+  text-decoration: none;
+  color: #ffff;
+  text-align: center;
+  font-size: 1rem;
+  border: 2px solid #ffff;
+  margin-left: 78.4%;
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register__link:hover {
+  color: #ffff;
+}
+h1 {
+  color: #ffff;
+  margin-top: 3.2rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.form-text {
+  font-family: 'Poppins', sans-serif;
+  color: #ffff;
+  margin-top: 0.34rem;
+  margin-bottom: 0;
+  font-weight: lighter;
+}
+input {
+  margin-top: 0;
+  width: 100%;
+  height: 3.4375rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  outline: none;
+}
+.formforgot-password {
+  margin-left: 76.4%;
+  font-family: 'Poppins', sans-serif;
+  color: #ffff;
+  margin-top: 1rem;
+}
+.continuebuton {
+  width: 100%;
+  background: #8902a6;
+  border-color: #ffff;
+  border-radius: 5px;
+  height: 2.1875rem;
+  color: #ffffff;
 }

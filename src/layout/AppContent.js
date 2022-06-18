@@ -5,29 +5,31 @@ import { CContainer, CSpinner } from '@coreui/react'
 // routes config
 import routes from '../routes'
 
+const Loading = () => (
+  <div className="pt-3 text-center">
+    <div className="sk-spinner sk-spinner-pulse">Page Loading ...</div>
+  </div>
+)
+
 const AppContent = () => {
   return (
     <CContainer lg>
-      <Suspense fallback={<CSpinner color="primary" />}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           {routes.map((route, idx) => {
             return (
-              route.component && (
+              route.element && (
                 <Route
                   key={idx}
                   path={route.path}
                   exact={route.exact}
                   name={route.name}
-                  render={(props) => (
-                    <>
-                      <route.component {...props} />
-                    </>
-                  )}
+                  element={<route.element />}
                 />
               )
             )
           })}
-          <Navigate from="/" to="/dashboard" />
+          <Route path="/" element={<Navigate to="dashboard" replace />} />
         </Routes>
       </Suspense>
     </CContainer>

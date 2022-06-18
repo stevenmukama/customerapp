@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 // /* eslint-disable prettier/prettier */
 // import React, { useState, useEffect } from 'react'
 // import { useSelector, useDispatch } from 'react-redux'
@@ -208,177 +207,34 @@
 //     </>
 //   )
 // }
-import React from 'react'
-import { useState, useEffect } from 'react'
-// //
-import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-// import { toast } from 'react-toastify'
-import { register, reset } from '../../../features/auth/authSlice'
-//
-// import Spinner from '../../../components/Spinner'
-import Formregister from './Formregister'
 
+// export default Register
+
+import React, { useState } from 'react'
 import './../../pages/register/register.css'
-import { Link } from 'react-router-dom'
-// import React from 'react'
 
-export default function Register() {
-  //   return (
-  //     <div>Register</div>
-  //   )
-  // }
+const Formregister = (formData) => {
+  const [focused, setFocused] = useState(false)
+  const { label, errorMessage, onChange, id, ...inputProps } = formData
 
-  // export default const Register = () =>{
-  const [values, setValues] = useState({
-    firstname: '',
-    lastname: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  })
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  //isLoading
-  const { user, isError, isSuccess, message } = useSelector((state) => state.auth)
-  useEffect(() => {
-    if (isSuccess) {
-      navigate('/')
-    }
-
-    if (user) {
-      navigate('/')
-    }
-
-    dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch])
-
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value })
+  const handleFocus = (e) => {
+    setFocused(true)
   }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    const userData = {
-      firstname: values.firstname,
-      username: values.username,
-      lastname: values.lastname,
-      email: values.email,
-      password: values.password,
-    }
-    dispatch(register(userData))
-  }
-
-  //     if (isLoading) {
-  //       return <Spinner />
-  // }
-
-  const inputs = [
-    {
-      id: 1,
-      name: 'firstname',
-      type: 'text',
-      placeholder: 'First name',
-      errorMessage: 'First name should be 3-20 characters',
-      label: 'First name',
-      pattern: `^.{3,20}$`,
-      required: true,
-      className: 'thefirst',
-      // value: values.firstname,
-    },
-    {
-      id: 2,
-      name: 'lastname',
-      type: 'text',
-      placeholder: 'last name',
-      errorMessage: 'Last name should be 3-20 characters',
-      label: 'Last name',
-      pattern: `^.{3,20}$`,
-      required: true,
-    },
-    {
-      id: 3,
-      name: 'username',
-      type: 'text',
-      placeholder: 'Username',
-      errorMessage: 'User name should be 3-20 characters',
-      label: 'Username',
-      pattern: `^.{3,20}$`,
-      required: true,
-    },
-
-    {
-      id: 4,
-      name: 'email',
-      type: 'email',
-      placeholder: 'Email',
-      errorMessage: 'It should be a valid email address!',
-      label: 'Email',
-      required: true,
-    },
-    {
-      id: 5,
-      name: 'password',
-      type: 'text',
-      placeholder: 'Password',
-      errorMessage: 'Password should be between 8-20 characters!',
-      label: 'Password',
-      pattern: `^.{8,20}$`,
-      required: true,
-    },
-    {
-      id: 6,
-      name: 'confirmPassword',
-      type: 'password',
-      placeholder: 'Confirm Password',
-      errorMessage: "Passwords don't match!",
-      label: 'Confirm Password',
-      pattern: values.password,
-      required: true,
-    },
-  ]
 
   return (
-    <>
-      <div className="Register">
-        <div className="register-business">
-          <img className="fimboo__image" src="./fimbo-01 1.png" alt="fimbo" />
-          <p className="business-finance">
-            {' '}
-            <br /> The smart way to
-            <br />
-            manage your <br />
-            business finance!
-            <br />
-          </p>
-          <p className=" privacy-terms ">
-            <span id="privacy">privacy terms </span> &nbsp;&nbsp;and &nbsp;&nbsp;{' '}
-            <span id="privacy">conditions</span>
-          </p>
-        </div>
-
-        <form className='formforLogin' onSubmit={handleSubmit} autoComplete="false">
-          <Link to="/" className="loginlink">
-            LOGIN
-          </Link>
-          <p className="start-free">start free</p>
-          <p className="create-account">CREATE AN ACCOUNT</p>
-          <div className="formregister">
-            {inputs.map((input) => (
-              <Formregister
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-              />
-            ))}
-            <button className='submit__button' type="submit">CONTINUE</button>
-          </div>
-          <span className="socialmedia">Continue with social media profiles</span>
-        </form>
-      </div>
-    </>
+    <div className="formInput">
+      <label>{label}</label>
+      <input
+        className={inputProps.className}
+        {...inputProps}
+        onChange={onChange}
+        onBlur={handleFocus}
+        onFocus={() => inputProps.name === 'confirmPassword' && setFocused(true)}
+        focused={focused.toString()}
+      />
+      <span className="errormessage">{errorMessage}</span>
+    </div>
   )
 }
+
+export default Formregister
