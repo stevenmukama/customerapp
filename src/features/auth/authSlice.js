@@ -16,11 +16,13 @@ const initialState = {
 // Register user
 export const register = createAsyncThunk('auth/register', async (user, thunkAPI) => {
   try {
-    console.log('register')
+    // console.log('register')
     return await authService.register(user)
   } catch (error) {
     const message =
-      (error.response && error.response.data && error.response.data.message) ||
+      console.log('sendingggregister')(
+        error.response && error.response.data && error.response.data.message,
+      ) ||
       error.message ||
       error.toString()
     return thunkAPI.rejectWithValue(message)
@@ -48,6 +50,7 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 export const verifyEmail = createAsyncThunk('auth/verify', async (token, thunkAPI) => {
   try {
     const response = await authService.verifyEmail(token)
+    console.log(response)
 
     window.location.replace('/')
   } catch (error) {
@@ -83,7 +86,7 @@ export const authSlice = createSlice({
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false
-        state.isError = true 
+        state.isError = true
         state.message = action.payload
         state.user = null
       })

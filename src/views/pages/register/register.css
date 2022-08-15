@@ -5,9 +5,9 @@
 /* .continuebuttton {
   background-color: #8902a6;
 } */
- 
+
 .Register {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   /* justify-content: space-between; */
   margin: 2rem;
@@ -26,18 +26,40 @@
 /* .image-container{
   border
 } */
-
-.fimboo__image {
-  margin-top: 2rem;
-  border: 1px solid;
-  padding: 4.1875rem; 
-  background: #ffff;
+.register-imgCard {
+  /* margin: 3rem;
+  border: 1px solid black;
+  background-color: #ffffff; */
+  /* opacity: 0.6; */
+  margin: 2rem;
+  /* border: 1px solid; */
+  /* border-outline: none; */
+  background-color: #ffffff;
+  border-radius: 12px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.95) 0%,
     rgba(255, 255, 255, 0.722) 102.99%
   );
-  border-radius: 12px;
+} 
+.fimboo__image {
+  margin-top: 4rem;
+  margin-right: 7rem;
+  margin-left: 7rem;
+  margin-bottom: 4rem;
+  width: 15rem;
+  height: 5rem;
+  /* border: 1px solid; */
+  /* padding: 2.1875em 1.3em 2.1875em 1.3em; */
+  /* background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.722) 102.99%
+  ); */
+  /* background-color: #ffffff; */
+  /* border: 1px solid black;
+  /* opacity: 0.9; */
+  border-radius: 9px;
 }
 .business-finance {
   /* margin-top: 1rem; */
@@ -50,12 +72,19 @@ width: 459px; */
   text-align: center;
   color: #ffffff;
 }
-.privacy-terms {
+.Register-terms {
   font-size: 1rem;
   color: #ffffff;
+  margin-top: auto;
+  /* margin-bottom: revert; */
+  text-decoration: underline;
 }
 .formforLogin {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* } */
 }
 /* .formregister {
   padding-top: 2rem;
@@ -64,13 +93,9 @@ width: 459px; */
   display: flex;
   flex-direction: column;
 }
-#privacy {
-  text-decoration: underline;
-  color: #ffffff;
-}
 
 .loginlink {
-  text-decoration: none;
+  /* text-decoration: none;
   color: #ffff;
   text-align: center;
   font-size: 1rem;
@@ -80,7 +105,26 @@ width: 459px; */
   margin-bottom: 1rem;
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: pointer; */
+
+  text-decoration: none;
+  color: #ffff;
+  /* text-align: center; */
+  /* font-size: 1rem; */
+  /* border: 2px solid #8902a6; */
+  background-color: #8902a6;
+  margin-left: auto;
+  /* margin-bottom: 1rem; */
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  width: fit-content;
+  /* cursor: pointer; */
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: flex-end; */
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
 }
 .loginlink:hover {
   color: #ffff;
@@ -141,10 +185,79 @@ input:invalid[focused='true'] ~ span {
   background-color: #8902a6;
   outline: none;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 .socialmedia {
   margin-top: 1rem;
 }
+
+/* css responsiveness */
+/* @media only screen and (max-width: 768px) { */
+/* @media screen and (max-width: 480px) { } */
+@media  only screen and (max-width: 30em) { 
+  .register-imgCard {
+    margin: 3rem 0rem 1rem 0rem;
+  }
+  .Register {
+    height: 100vh;
+    flex-direction: column;
+  }
+  .register-business {
+    width: 100%;
+    row-gap: 1rem;
+    flex-direction: column;
+  }
+  .Register-terms {
+    margin-bottom: revert;
+  }
+.business-finance{
+  font-size: 2.5rem;
+}
+  .fimboo__image {
+    margin-top: 4rem;
+    /* /* margin-right: 4rem; */
+    /* margin-left: 4rem; */ 
+    margin-bottom: 4rem;
+    width: auto;
+    height: auto;
+    /* padding: 2.1875em 1.3em 2.1875em 1.3em; */
+    /* width: ;
+    height: 0; */
+  }
+
+  .loginlink {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .formforLogin {
+    /* width: 50%; */
+    width: auto;
+    margin-top: inherit;
+  }
+}
+
+/* @media only screen and (min-width: 48em) {
+  .fimboo__image {
+    margin-top: 2rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    width: 12rem;
+    height: 3rem;
+  }  */
+  
+
+/* .register-business {
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+   } */
 
 /* <form>
           <div className="flex-container1">

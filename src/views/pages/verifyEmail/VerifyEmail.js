@@ -6,7 +6,8 @@ import { verifyEmail } from 'src/features/auth/authSlice'
 
 function VerifyEmail() {
   const [searchParams] = useSearchParams()
-  const [token, setToken] = useState(searchParams.get('token'))
+  const [token] = useState(searchParams.get('token'))
+  // const [token, setToken] = useState(searchParams.get('token'))
   console.log(searchParams.get('token'))
 
   const dispatch = useDispatch()

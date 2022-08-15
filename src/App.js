@@ -1,6 +1,6 @@
 import React from 'react'
+import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import './scss/style.scss'
 
 const loading = (
   <div className="pt-3 text-center">
@@ -9,7 +9,6 @@ const loading = (
 )
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 
 // Pages
 const Login = React.lazy(() => import('./views/pages/login/Login'))
@@ -49,7 +48,6 @@ function App() {
 
             {/* <Route exact path="/500" name="Page 500" element={<Page500 />} /> */}
             {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-            <Route path="*" name="Home" element={<DefaultLayout />} />
           </Routes>
         </React.Suspense>
       </Router>

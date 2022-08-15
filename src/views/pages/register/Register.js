@@ -344,7 +344,8 @@ export default function Register() {
     <>
       <div className="Register">
         <div className="register-business">
-          <img className="fimboo__image" src="./fimbo-01 1.png" alt="fimbo" />
+          <div className="register-imgCard"> <img className="fimboo__image" src="./fimbo-011.png" alt="fimbo" /></div>
+          
           <p className="business-finance">
             {' '}
             <br /> The smart way to
@@ -353,7 +354,7 @@ export default function Register() {
             business finance!
             <br />
           </p>
-          <p className=" privacy-terms ">
+          <p className=" Register-terms ">
             <span id="privacy">privacy terms </span> &nbsp;&nbsp;and &nbsp;&nbsp;{' '}
             <span id="privacy">conditions</span>
           </p>

@@ -32,7 +32,7 @@ function Login() {
       navigate('/')
     }
     if (user) {
-      navigate('/owner')
+      navigate('/businessForm')
     }
 
     dispatch(reset())
@@ -72,16 +72,16 @@ function Login() {
           <br /> way!
         </p>
 
-        <p className=" privacy-terms ">
-          <span>privacy terms</span>
+        <p>
+          <span className="privacy-terms">privacy terms</span>
           &nbsp;&nbsp;and &nbsp;&nbsp;
-          <span>conditions</span>
+          <span className="privacy-terms">conditions</span>
         </p>
       </div>
       <div className="card">
         {/* <div className="form_data"> */}
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className="formCard">
           {/* <Link to={user.id}>{user.name}</Link> */}
           <Link to="/register" className="register__link">
             REGISTER

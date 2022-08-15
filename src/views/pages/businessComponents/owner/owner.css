@@ -18,27 +18,7 @@
   background-color: #8902a6;
 }
 
-table,
-th {
-  /* // border: 1px xsolid; */
-  border: 1px solid #c2cfe0;
-  box-sizing: border-box;
-  border-radius: 2px;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700, Bold;
-  font-size: 1rem;
-  line-height: 14px;
-  /* identical to box height */
-  color: #420352;
-}
-table {
-  width: 100%;
-}
-th {
-  text-align: center;
-  height: 2rem;
-}
+
 
 .business__info {
   font-family: Raleway;
